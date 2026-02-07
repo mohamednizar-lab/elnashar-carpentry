@@ -1,0 +1,49 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "services": "Our Services",
+    "gallery": "Gallery",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "El Sayed El Nashar Carpentry Works",
+    "subtitle": "Long experience in all carpentry and custom furniture works. We provide professional services with high quality, affordable prices, fast execution, and precise details.",
+    "contactUs": "Contact Us",
+    "ourServices": "Our Services"
+  },
+  "about": {
+    "title": "About Us",
+    "content": "At El Sayed El Nashar, we provide the best carpentry services in Sharjah, Dubai, and Ajman. We specialize in custom furniture, installation, maintenance, kitchens, doors, and bedrooms. We deliver complete carpentry solutions for homes, offices, and shops with high quality, fast service, and competitive prices."
+  },
+  "services": {
+    "title": "Our Services",
+    "items": [
+      "Bedroom dismantling & installation",
+      "Kitchen & cabinet installation",
+      "Wooden doors repair",
+      "Home & office furniture maintenance",
+      "Professional furniture moving",
+      "General carpentry works",
+      "Sofa frame repair",
+      "Legs & damage fixing",
+      "Custom furniture design",
+      "24/7 emergency service"
+    ],
+    "cta": "Contact us now via WhatsApp or call us for fast service"
+  },
+  "gallery": {
+    "title": "Our Work Gallery"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "phone": "Phone",
+    "whatsapp": "WhatsApp",
+    "call": "Call"
+  },
+  "footer": {
+    "areas": "Serving all areas of Sharjah • Dubai • Ajman",
+    "developer": "Developed by",
+    "developerName": "Mohamed Nizar"
+  }
+}
