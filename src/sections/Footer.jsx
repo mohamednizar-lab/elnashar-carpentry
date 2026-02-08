@@ -1,7 +1,8 @@
 import { useLang } from '../context/LanguageContext'
 import { getTranslations } from '../i18n'
 
-const DEVELOPER_LINK = 'https://wa.me/201029022621'
+const DEVELOPER_LINK =
+  'https://api.whatsapp.com/send?phone=201029022621'
 
 export default function Footer() {
   const { lang } = useLang()
@@ -15,7 +16,6 @@ export default function Footer() {
           {t.footer.areas}
         </p>
 
-        {/* Minimal developer credit with small link icon */}
         <a
           href={DEVELOPER_LINK}
           target="_blank"
