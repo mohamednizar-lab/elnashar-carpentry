@@ -2,45 +2,51 @@
   "nav": {
     "home": "Home",
     "about": "About Us",
-    "services": "Our Services",
-    "gallery": "Gallery",
+    "services": "Services",
+    "gallery": "Our Work",
     "contact": "Contact"
   },
+
   "hero": {
-    "title": "El Sayed El Nashar Carpentry Works",
-    "subtitle": "Long experience in all carpentry and custom furniture works. We provide professional services with high quality, affordable prices, fast execution, and precise details.",
+    "title": "Al Itqan Carpentry Works",
+    "subtitle": "At Al Itqan, we provide complete professional carpentry solutions for homes and offices, delivering high-quality craftsmanship, precise finishing, and affordable prices to ensure durable results that match your style and needs.",
     "contactUs": "Contact Us",
     "ourServices": "Our Services"
   },
+
   "about": {
     "title": "About Us",
-    "content": "At El Sayed El Nashar, we provide the best carpentry services in Sharjah, Dubai, and Ajman. We specialize in custom furniture, installation, maintenance, kitchens, doors, and bedrooms. We deliver complete carpentry solutions for homes, offices, and shops with high quality, fast service, and competitive prices."
+    "content": "Al Itqan Carpentry Works is a specialized carpentry company serving Sharjah, Dubai, and Ajman. We offer furniture installation, custom woodwork, kitchens, doors, bedrooms, and full maintenance services using premium materials and expert craftsmanship. Our focus is on quality, accuracy, and customer satisfaction, making us a trusted choice for homes, offices, and commercial spaces across the UAE."
   },
+
   "services": {
     "title": "Our Services",
     "items": [
-      "Bedroom dismantling & installation",
-      "Kitchen & cabinet installation",
-      "Wooden doors repair",
-      "Home & office furniture maintenance",
-      "Professional furniture moving",
-      "General carpentry works",
-      "Sofa frame repair",
-      "Legs & damage fixing",
-      "Custom furniture design",
+      "Bedroom dismantling and installation",
+      "Modern kitchens and cabinets installation",
+      "Wooden doors and locks repair",
+      "Home and office furniture maintenance",
+      "Professional furniture moving and reinstallation",
+      "General carpentry works upon request",
+      "Sofa and chair frame repair",
+      "Wood damage and breakage fixing",
+      "Custom furniture design and manufacturing",
       "24/7 emergency service"
     ],
-    "cta": "Contact us now via WhatsApp or call us for fast service"
+    "cta": "Contact us now via WhatsApp or call us for fast and professional service"
   },
+
   "gallery": {
-    "title": "Our Work Gallery"
+    "title": "Al Itqan Projects & Works"
   },
+
   "contact": {
     "title": "Contact Us",
     "phone": "Phone",
     "whatsapp": "WhatsApp",
-    "call": "Call"
+    "call": "Call Now"
   },
+
   "footer": {
     "areas": "Serving all areas of Sharjah • Dubai • Ajman",
     "developer": "Developed by",
