@@ -1,6 +1,9 @@
 import { useLang } from '../context/LanguageContext'
 import { getTranslations } from '../i18n'
-import heroImg from '../assets/images/hero.jpg' 
+import heroImg from '../assets/images/hero.jpg'
+import { trackConversion } from '../utils/trackConversion' // ✅ NEW
+
+const WHATSAPP = 'https://wa.me/971505001597'
 
 export default function Hero() {
   const { lang } = useLang()
@@ -44,21 +47,23 @@ export default function Hero() {
             className="flex flex-wrap gap-4 animate-fade-in-up"
             style={{ animationDelay: '0.3s', animationFillMode: 'forwards', opacity: 0 }}
           >
-            <a
-              href="https://wa.me/971505001597"
-              target="_blank"
-              rel="noopener noreferrer"
+
+            {/* ✅ WhatsApp with Conversion Tracking */}
+            <button
+              onClick={() => trackConversion(WHATSAPP)}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#25D366] text-white font-semibold hover:opacity-90 transition-opacity shadow-card"
             >
               {t.hero.contactUs}
-            </a>
+            </button>
 
+            {/* Scroll only (no conversion) */}
             <button
               onClick={() => scrollTo('services')}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/20 backdrop-blur text-white font-semibold hover:bg-white/30 transition-colors border border-white/30"
             >
               {t.hero.ourServices}
             </button>
+
           </div>
 
         </div>
