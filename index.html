@@ -8,33 +8,48 @@
     <!-- SEO -->
     <meta
       name="description"
-      content="الإتقان لأعمال النجارة - حلول نجارة متكاملة في الشارقة ودبي وعجمان. تفصيل أثاث، مطابخ، غرف نوم، صيانة وإصلاح وديكورات خشبية باحترافية عالية. اتصل الآن +971505001597"
-    />
-    <meta
-      name="keywords"
-      content="نجار, نجارة, الإتقان, نجار الشارقة, نجار دبي, نجار عجمان, مطابخ, أثاث, صيانة, تفصيل أثاث, ديكور خشب"
+      content="الإتقان لأعمال النجارة - حلول نجارة متكاملة في الشارقة ودبي وعجمان. تفصيل أثاث، مطابخ، غرف نوم، صيانة وإصلاح وديكورات خشبية باحترافية عالية."
     />
 
-    <meta name="theme-color" content="#5c4033" />
+    <!-- ========================= -->
+    <!-- ✅ Google Ads Tracking FULL -->
+    <!-- ========================= -->
 
-    <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- Google Ads Global Tag -->
+    <!-- Global Tag -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17943215565"></script>
+
     <script>
       window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'AW-17943215565');
+
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+
+      gtag("js", new Date());
+
+      /* مهم جدًا */
+      gtag("config", "AW-17943215565", {
+        conversion_linker: true,
+      });
+
+      /* ✅ دي اللي كانت ناقصة */
+      function gtag_report_conversion(url) {
+        var callback = function () {
+          if (url) window.location.href = url;
+        };
+
+        gtag("event", "conversion", {
+          send_to: "AW-17943215565/8DBGCJHi3vUbEM37_utC",
+          value: 1.0,
+          currency: "AED",
+          event_callback: callback,
+        });
+
+        return false;
+      }
     </script>
 
-    <title>الإتقان لأعمال النجارة | Al Itqan Carpentry Works - الشارقة</title>
+    <title>الإتقان لأعمال النجارة</title>
   </head>
 
   <body>

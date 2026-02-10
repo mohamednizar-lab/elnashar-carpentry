@@ -1,7 +1,7 @@
 import { useLang } from '../context/LanguageContext'
 import { getTranslations } from '../i18n'
 import heroImg from '../assets/images/hero.jpg'
-import { trackConversion } from '../utils/trackConversion' // ✅ NEW
+import { trackConversion } from '../utils/trackConversion'
 
 const WHATSAPP = 'https://wa.me/971505001597'
 
@@ -18,14 +18,13 @@ export default function Hero() {
       id="hero"
       className="relative min-h-screen flex items-center pt-20 md:pt-24 overflow-hidden"
     >
-
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center bg-no-repeat scale-105"
         style={{ backgroundImage: `url(${heroImg})` }}
       />
 
-      {/* Dark Overlay */}
+      {/* Overlay */}
       <div className="absolute inset-0 bg-walnut/75" />
 
       {/* Content */}
@@ -48,16 +47,19 @@ export default function Hero() {
             style={{ animationDelay: '0.3s', animationFillMode: 'forwards', opacity: 0 }}
           >
 
-            {/* ✅ WhatsApp with Conversion Tracking */}
+            {/* WhatsApp (Conversion tracked) */}
             <button
+              type="button"
+              aria-label="WhatsApp"
               onClick={() => trackConversion(WHATSAPP)}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-[#25D366] text-white font-semibold hover:opacity-90 transition-opacity shadow-card"
             >
-              {t.hero.contactUs}
+              <span>{t.hero.contactUs}</span>
             </button>
 
-            {/* Scroll only (no conversion) */}
+            {/* Scroll only */}
             <button
+              type="button"
               onClick={() => scrollTo('services')}
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white/20 backdrop-blur text-white font-semibold hover:bg-white/30 transition-colors border border-white/30"
             >

@@ -1,6 +1,6 @@
 import { useLang } from '../context/LanguageContext'
 import { getTranslations } from '../i18n'
-import { trackConversion } from '../utils/trackConversion' // ✅ NEW
+import { trackConversion } from '../utils/trackConversion'
 
 const PHONE = '+971505001597'
 const WHATSAPP = 'https://wa.me/971505001597'
@@ -9,18 +9,24 @@ export default function Contact() {
   const { lang } = useLang()
   const t = getTranslations(lang)
 
+  const handleCall = () => trackConversion(`tel:${PHONE}`)
+  const handleWhatsApp = () => trackConversion(WHATSAPP)
+
   return (
     <section id="contact" className="py-20 md:py-28 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
         <h2 className="text-3xl md:text-4xl font-bold text-walnut text-center mb-16">
           {t.contact.title}
         </h2>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
 
-          {/* ✅ Call Button with Conversion */}
+          {/* Call */}
           <button
-            onClick={() => trackConversion(`tel:${PHONE}`)}
+            type="button"
+            aria-label="Call us"
+            onClick={handleCall}
             className="flex items-center gap-4 px-8 py-4 rounded-2xl bg-wood-100 hover:bg-wood-200 transition-colors w-full sm:w-auto justify-center"
           >
             <div className="w-12 h-12 rounded-full bg-walnut/20 flex items-center justify-center">
@@ -37,14 +43,16 @@ export default function Contact() {
           </button>
 
 
-          {/* ✅ WhatsApp Button with Conversion */}
+          {/* WhatsApp */}
           <button
-            onClick={() => trackConversion(WHATSAPP)}
+            type="button"
+            aria-label="WhatsApp"
+            onClick={handleWhatsApp}
             className="flex items-center gap-4 px-8 py-4 rounded-2xl bg-[#25D366] hover:opacity-90 text-white transition-opacity w-full sm:w-auto justify-center"
           >
             <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487z"/>
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207z"/>
               </svg>
             </div>
 

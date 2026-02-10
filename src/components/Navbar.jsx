@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import { useLang } from '../context/LanguageContext'
 import { getTranslations } from '../i18n'
-import logo from '../assets/images/logo.png' 
+import { trackConversion } from '../utils/trackConversion'
+import logo from '../assets/images/logo.png'
+
+const WHATSAPP = 'https://wa.me/971505001597'
 
 const NavLink = ({ href, children, onClick }) => (
   <a
@@ -22,13 +25,15 @@ export default function Navbar() {
   const t = getTranslations(lang)
   const [open, setOpen] = useState(false)
 
+  const handleWhatsApp = () => trackConversion(WHATSAPP)
+
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-soft">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 
         <div className="flex items-center justify-between h-16 md:h-20">
 
-          {/* ===== Logo + Name ===== */}
+          {/* Logo + Name */}
           <a
             href="#hero"
             className="flex items-center gap-3"
@@ -39,7 +44,7 @@ export default function Navbar() {
           >
             <img
               src={logo}
-              alt="El Nashar Logo"
+              alt="Al Itqan Logo"
               className="h-10 md:h-12 w-auto object-contain"
             />
 
@@ -47,6 +52,7 @@ export default function Navbar() {
               {t.hero.title}
             </span>
           </a>
+
 
           {/* ===== Desktop Menu ===== */}
           <div className="hidden md:flex items-center gap-8">
@@ -63,18 +69,20 @@ export default function Navbar() {
               {lang === 'ar' ? 'EN' : 'ع'}
             </button>
 
-            <a
-              href="https://wa.me/971505001597"
-              target="_blank"
-              rel="noopener noreferrer"
+            {/* ✅ WhatsApp tracked */}
+            <button
+              type="button"
+              onClick={handleWhatsApp}
               className="px-4 py-2 rounded-lg bg-[#25D366] text-white font-medium hover:opacity-90 transition-opacity"
             >
               {t.hero.contactUs}
-            </a>
+            </button>
           </div>
+
 
           {/* ===== Mobile ===== */}
           <div className="flex md:hidden items-center gap-3">
+
             <button
               onClick={toggleLang}
               className="p-2 rounded-lg bg-wood-100 text-walnut font-medium"
@@ -98,6 +106,7 @@ export default function Navbar() {
           </div>
         </div>
 
+
         {/* ===== Mobile Menu ===== */}
         {open && (
           <div className="md:hidden py-4 border-t border-wood-200 animate-fade-in">
@@ -108,14 +117,14 @@ export default function Navbar() {
               <NavLink href="#gallery" onClick={() => setOpen(false)}>{t.nav.gallery}</NavLink>
               <NavLink href="#contact" onClick={() => setOpen(false)}>{t.nav.contact}</NavLink>
 
-              <a
-                href="https://wa.me/971505001597"
-                target="_blank"
-                rel="noopener noreferrer"
+              {/* ✅ WhatsApp tracked */}
+              <button
+                type="button"
+                onClick={handleWhatsApp}
                 className="px-4 py-2 rounded-lg bg-[#25D366] text-white font-medium text-center"
               >
                 {t.hero.contactUs}
-              </a>
+              </button>
             </div>
           </div>
         )}
