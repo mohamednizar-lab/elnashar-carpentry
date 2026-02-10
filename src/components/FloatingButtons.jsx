@@ -1,21 +1,15 @@
+
+import { trackConversion } from '../utils/trackConversion'
+
 const WHATSAPP = 'https://api.whatsapp.com/send?phone=971505001597'
 const PHONE = 'tel:+971505001597'
 
 export default function FloatingButtons() {
-
-  const handleConversion = (url) => {
-    if (typeof window.gtag_report_conversion === 'function') {
-      window.gtag_report_conversion(url)
-    } else {
-      window.location.href = url
-    }
-  }
-
   return (
     <>
       {/* WhatsApp */}
       <button
-        onClick={() => handleConversion(WHATSAPP)}
+        onClick={() => trackConversion(WHATSAPP)}
         aria-label="WhatsApp"
         className="
           fixed bottom-10 right-5 z-40
@@ -35,7 +29,7 @@ export default function FloatingButtons() {
 
       {/* Call */}
       <button
-        onClick={() => handleConversion(PHONE)}
+        onClick={() => trackConversion(PHONE)}
         aria-label="Call"
         className="
           fixed bottom-10 left-5 z-40
