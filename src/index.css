@@ -10,6 +10,18 @@ body {
   @apply antialiased font-sans text-wood-800;
 }
 
+[dir='rtl'] {
+  text-align: right;
+}
+
+[dir='rtl'] .text-start {
+  text-align: start;
+}
+
+[dir='ltr'] {
+  text-align: left;
+}
+
 .opacity-0 {
   opacity: 0;
 }

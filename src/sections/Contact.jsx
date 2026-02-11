@@ -1,71 +1,47 @@
-import { useLang } from '../context/LanguageContext'
-import { getTranslations } from '../i18n'
-
-const PHONE = '+971505001597'
-const WHATSAPP = 'https://wa.me/971505001597'
+import { useTranslation } from 'react-i18next'
+import { FaPhoneAlt, FaWhatsapp } from 'react-icons/fa'
+import { PHONE_NUMBER, PHONE_TEL, WHATSAPP_URL } from '../constants/links'
 
 export default function Contact() {
-  const { lang } = useLang()
-  const t = getTranslations(lang)
-
-  const handleCall = () => {
-    window.location.href = `tel:${PHONE}`
-  }
-
-  const handleWhatsApp = () => {
-    window.open(WHATSAPP, '_blank')
-  }
+  const { t } = useTranslation()
 
   return (
     <section id="contact" className="py-20 md:py-28 bg-white">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-
         <h2 className="text-3xl md:text-4xl font-bold text-walnut text-center mb-16">
-          {t.contact.title}
+          {t('contact.title')}
         </h2>
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-
-          {/* ===== Call Button ===== */}
-          <button
-            type="button"
-            aria-label="اتصل الآن"
-            onClick={handleCall}
-            className="flex items-center gap-4 px-8 py-4 rounded-2xl bg-wood-100 hover:bg-wood-200 transition-all duration-200 w-full sm:w-auto justify-center shadow-md hover:shadow-lg"
+          <a
+            href={PHONE_TEL}
+            className="flex items-center gap-4 px-8 py-4 rounded-2xl bg-wood-100 hover:bg-wood-200 transition-all duration-200 w-full sm:w-auto justify-center sm:justify-start shadow-md hover:shadow-lg min-w-0"
+            aria-label={t('contact.call')}
           >
-            <div className="w-12 h-12 rounded-full bg-walnut/20 flex items-center justify-center">
-              <svg className="w-6 h-6 text-walnut" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2}
-                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
+            <div className="w-12 h-12 rounded-full bg-walnut/20 flex items-center justify-center shrink-0">
+              <FaPhoneAlt className="w-5 h-5 text-walnut" aria-hidden />
             </div>
-
-            <div className="text-start">
-              <p className="text-sm text-wood-600">اتصل الآن</p>
-              <p className="font-bold text-walnut">{PHONE}</p>
+            <div className="text-start min-w-0">
+              <p className="text-sm text-wood-600">{t('contact.callNow')}</p>
+              <p className="font-bold text-walnut truncate">{PHONE_NUMBER}</p>
             </div>
-          </button>
+          </a>
 
-
-          {/* ===== WhatsApp Button ===== */}
-          <button
-            type="button"
-            aria-label="تواصل عبر واتساب"
-            onClick={handleWhatsApp}
-            className="flex items-center gap-4 px-8 py-4 rounded-2xl bg-[#25D366] hover:opacity-90 text-white transition-all duration-200 w-full sm:w-auto justify-center shadow-md hover:shadow-lg"
+          <a
+            href={WHATSAPP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-4 px-8 py-4 rounded-2xl bg-[#25D366] hover:opacity-90 text-white transition-all duration-200 w-full sm:w-auto justify-center sm:justify-start shadow-md hover:shadow-lg min-w-0"
+            aria-label={t('contact.whatsapp')}
           >
-            <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
-              <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207z"/>
-              </svg>
+            <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center shrink-0">
+              <FaWhatsapp className="w-6 h-6" aria-hidden />
             </div>
-
-            <div className="text-start">
-              <p className="text-sm text-white/90">تواصل عبر واتساب</p>
-              <p className="font-bold">رد سريع خلال دقائق</p>
+            <div className="text-start min-w-0">
+              <p className="text-sm text-white/90">{t('contact.whatsappDesc')}</p>
+              <p className="font-bold">{t('contact.fastReply')}</p>
             </div>
-          </button>
-
+          </a>
         </div>
       </div>
     </section>

@@ -6,21 +6,19 @@
     "gallery": "Our Work",
     "contact": "Contact"
   },
-
   "hero": {
     "title": "Al Itqan Carpentry Works",
     "subtitle": "At Al Itqan, we provide complete professional carpentry solutions for homes and offices, delivering high-quality craftsmanship, precise finishing, and affordable prices to ensure durable results that match your style and needs.",
     "contactUs": "Contact Us",
     "ourServices": "Our Services"
   },
-
   "about": {
     "title": "About Us",
     "content": "Al Itqan Carpentry Works is a specialized carpentry company serving Sharjah, Dubai, and Ajman. We offer furniture installation, custom woodwork, kitchens, doors, bedrooms, and full maintenance services using premium materials and expert craftsmanship. Our focus is on quality, accuracy, and customer satisfaction, making us a trusted choice for homes, offices, and commercial spaces across the UAE."
   },
-
   "services": {
     "title": "Our Services",
+    "cardDesc": "Professional service with high quality and fast execution",
     "items": [
       "Bedroom dismantling and installation",
       "Modern kitchens and cabinets installation",
@@ -35,18 +33,26 @@
     ],
     "cta": "Contact us now via WhatsApp or call us for fast and professional service"
   },
-
   "gallery": {
-    "title": "Al Itqan Projects & Works"
+    "title": "Al Itqan Projects & Works",
+    "img1": "Bedroom installation",
+    "img2": "Kitchen cabinets",
+    "img3": "Wooden doors repair",
+    "img4": "Custom wardrobe design",
+    "img5": "Furniture assembly",
+    "img6": "Office furniture",
+    "img7": "Sofa repair",
+    "img8": "Professional wood finishing"
   },
-
   "contact": {
     "title": "Contact Us",
     "phone": "Phone",
     "whatsapp": "WhatsApp",
-    "call": "Call Now"
+    "call": "Call Now",
+    "callNow": "Call Now",
+    "whatsappDesc": "Chat on WhatsApp",
+    "fastReply": "Fast reply within minutes"
   },
-
   "footer": {
     "areas": "Serving all areas of Sharjah • Dubai • Ajman",
     "developer": "Developed by",
