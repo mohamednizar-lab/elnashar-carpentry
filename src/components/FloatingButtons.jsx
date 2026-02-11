@@ -1,5 +1,3 @@
-import { trackConversion } from '../utils/trackConversion'
-
 const WHATSAPP = 'https://wa.me/971505001597'
 const PHONE = 'tel:+971505001597'
 
@@ -8,7 +6,7 @@ export default function FloatingButtons() {
     <>
       {/* WhatsApp */}
       <button
-        onClick={() => trackConversion(WHATSAPP)}
+        onClick={() => window.open(WHATSAPP, '_blank')}
         aria-label="WhatsApp"
         className="
           fixed bottom-16 right-5 z-40
@@ -28,7 +26,7 @@ export default function FloatingButtons() {
 
       {/* Call */}
       <button
-        onClick={() => trackConversion(PHONE)}
+        onClick={() => (window.location.href = PHONE)}
         aria-label="Call"
         className="
           fixed bottom-16 left-5 z-40

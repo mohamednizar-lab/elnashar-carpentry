@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { useLang } from '../context/LanguageContext'
 import { getTranslations } from '../i18n'
-import { trackConversion } from '../utils/trackConversion'
 import logo from '../assets/images/logo.png'
 
 const WHATSAPP = 'https://wa.me/971505001597'
@@ -25,7 +24,7 @@ export default function Navbar() {
   const t = getTranslations(lang)
   const [open, setOpen] = useState(false)
 
-  const handleWhatsApp = () => trackConversion(WHATSAPP)
+  const handleWhatsApp = () => window.open(WHATSAPP, '_blank')
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm shadow-soft">
@@ -33,7 +32,6 @@ export default function Navbar() {
 
         <div className="flex items-center justify-between h-16 md:h-20">
 
-          {/* Logo + Name */}
           <a
             href="#hero"
             className="flex items-center gap-3"
@@ -53,8 +51,6 @@ export default function Navbar() {
             </span>
           </a>
 
-
-          {/* ===== Desktop Menu ===== */}
           <div className="hidden md:flex items-center gap-8">
             <NavLink href="#hero">{t.nav.home}</NavLink>
             <NavLink href="#about">{t.nav.about}</NavLink>
@@ -69,7 +65,6 @@ export default function Navbar() {
               {lang === 'ar' ? 'EN' : 'ع'}
             </button>
 
-            {/* ✅ WhatsApp tracked */}
             <button
               type="button"
               onClick={handleWhatsApp}
@@ -79,55 +74,7 @@ export default function Navbar() {
             </button>
           </div>
 
-
-          {/* ===== Mobile ===== */}
-          <div className="flex md:hidden items-center gap-3">
-
-            <button
-              onClick={toggleLang}
-              className="p-2 rounded-lg bg-wood-100 text-walnut font-medium"
-            >
-              {lang === 'ar' ? 'EN' : 'ع'}
-            </button>
-
-            <button
-              onClick={() => setOpen(!open)}
-              className="p-2 rounded-lg text-walnut hover:bg-wood-100"
-              aria-label="Menu"
-            >
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                {open ? (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                ) : (
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                )}
-              </svg>
-            </button>
-          </div>
         </div>
-
-
-        {/* ===== Mobile Menu ===== */}
-        {open && (
-          <div className="md:hidden py-4 border-t border-wood-200 animate-fade-in">
-            <div className="flex flex-col gap-4">
-              <NavLink href="#hero" onClick={() => setOpen(false)}>{t.nav.home}</NavLink>
-              <NavLink href="#about" onClick={() => setOpen(false)}>{t.nav.about}</NavLink>
-              <NavLink href="#services" onClick={() => setOpen(false)}>{t.nav.services}</NavLink>
-              <NavLink href="#gallery" onClick={() => setOpen(false)}>{t.nav.gallery}</NavLink>
-              <NavLink href="#contact" onClick={() => setOpen(false)}>{t.nav.contact}</NavLink>
-
-              {/* ✅ WhatsApp tracked */}
-              <button
-                type="button"
-                onClick={handleWhatsApp}
-                className="px-4 py-2 rounded-lg bg-[#25D366] text-white font-medium text-center"
-              >
-                {t.hero.contactUs}
-              </button>
-            </div>
-          </div>
-        )}
       </div>
     </nav>
   )

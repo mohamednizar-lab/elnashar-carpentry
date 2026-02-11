@@ -11,48 +11,29 @@
       content="الإتقان لأعمال النجارة - حلول نجارة متكاملة في الشارقة ودبي وعجمان. تفصيل أثاث، مطابخ، غرف نوم، صيانة وإصلاح وديكورات خشبية باحترافية عالية."
     />
 
-    <!-- ========================= -->
-    <!-- ✅ Google Ads Tracking FULL -->
-    <!-- ========================= -->
-
-    <!-- Global Tag -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17943215565"></script>
-
+    <!-- ✅ Google Tag Manager -->
     <script>
-      window.dataLayer = window.dataLayer || [];
-
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-
-      gtag("js", new Date());
-
-      /* مهم جدًا */
-      gtag("config", "AW-17943215565", {
-        conversion_linker: true,
-      });
-
-      /* ✅ دي اللي كانت ناقصة */
-      function gtag_report_conversion(url) {
-        var callback = function () {
-          if (url) window.location.href = url;
-        };
-
-        gtag("event", "conversion", {
-          send_to: "AW-17943215565/8DBGCJHi3vUbEM37_utC",
-          value: 1.0,
-          currency: "AED",
-          event_callback: callback,
-        });
-
-        return false;
-      }
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-NNTKDRH5');
     </script>
 
     <title>الإتقان لأعمال النجارة</title>
   </head>
 
   <body>
+    <!-- GTM noscript -->
+    <noscript>
+      <iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-NNTKDRH5"
+        height="0"
+        width="0"
+        style="display:none;visibility:hidden"
+      ></iframe>
+    </noscript>
+
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

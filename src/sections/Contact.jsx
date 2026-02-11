@@ -1,6 +1,5 @@
 import { useLang } from '../context/LanguageContext'
 import { getTranslations } from '../i18n'
-import { trackConversion } from '../utils/trackConversion'
 
 const PHONE = '+971505001597'
 const WHATSAPP = 'https://wa.me/971505001597'
@@ -9,8 +8,13 @@ export default function Contact() {
   const { lang } = useLang()
   const t = getTranslations(lang)
 
-  const handleCall = () => trackConversion(`tel:${PHONE}`)
-  const handleWhatsApp = () => trackConversion(WHATSAPP)
+  const handleCall = () => {
+    window.location.href = `tel:${PHONE}`
+  }
+
+  const handleWhatsApp = () => {
+    window.open(WHATSAPP, '_blank')
+  }
 
   return (
     <section id="contact" className="py-20 md:py-28 bg-white">
@@ -22,12 +26,12 @@ export default function Contact() {
 
         <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
 
-          {/* Call */}
+          {/* ===== Call Button ===== */}
           <button
             type="button"
-            aria-label="Call us"
+            aria-label="اتصل الآن"
             onClick={handleCall}
-            className="flex items-center gap-4 px-8 py-4 rounded-2xl bg-wood-100 hover:bg-wood-200 transition-colors w-full sm:w-auto justify-center"
+            className="flex items-center gap-4 px-8 py-4 rounded-2xl bg-wood-100 hover:bg-wood-200 transition-all duration-200 w-full sm:w-auto justify-center shadow-md hover:shadow-lg"
           >
             <div className="w-12 h-12 rounded-full bg-walnut/20 flex items-center justify-center">
               <svg className="w-6 h-6 text-walnut" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -37,18 +41,18 @@ export default function Contact() {
             </div>
 
             <div className="text-start">
-              <p className="text-wood-600 text-sm">{t.contact.phone}</p>
-              <p className="font-semibold text-walnut">{PHONE}</p>
+              <p className="text-sm text-wood-600">اتصل الآن</p>
+              <p className="font-bold text-walnut">{PHONE}</p>
             </div>
           </button>
 
 
-          {/* WhatsApp */}
+          {/* ===== WhatsApp Button ===== */}
           <button
             type="button"
-            aria-label="WhatsApp"
+            aria-label="تواصل عبر واتساب"
             onClick={handleWhatsApp}
-            className="flex items-center gap-4 px-8 py-4 rounded-2xl bg-[#25D366] hover:opacity-90 text-white transition-opacity w-full sm:w-auto justify-center"
+            className="flex items-center gap-4 px-8 py-4 rounded-2xl bg-[#25D366] hover:opacity-90 text-white transition-all duration-200 w-full sm:w-auto justify-center shadow-md hover:shadow-lg"
           >
             <div className="w-12 h-12 rounded-full bg-white/20 flex items-center justify-center">
               <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -57,8 +61,8 @@ export default function Contact() {
             </div>
 
             <div className="text-start">
-              <p className="text-white/90 text-sm">{t.contact.whatsapp}</p>
-              <p className="font-semibold">{t.contact.call}</p>
+              <p className="text-sm text-white/90">تواصل عبر واتساب</p>
+              <p className="font-bold">رد سريع خلال دقائق</p>
             </div>
           </button>
 
